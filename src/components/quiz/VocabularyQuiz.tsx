@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { VOCAB_QUESTIONS } from "./vocabQuestions";
 import { bigConfetti, popConfetti } from "./Confetti";
