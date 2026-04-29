@@ -3,13 +3,17 @@ import { AnimatePresence, motion } from "framer-motion";
 import { QUESTIONS, type Answer } from "./questions";
 import { bigConfetti, popConfetti } from "./Confetti";
 import { Button } from "@/components/ui/button";
-import { Sparkles, Trophy, RefreshCw, Share2, Check, X } from "lucide-react";
+import { Sparkles, Trophy, RefreshCw, Share2, Check, X, ArrowLeft, Home } from "lucide-react";
 import { toast } from "sonner";
 
 type Phase = "intro" | "playing" | "done";
 type Feedback = null | "correct" | "wrong";
 
-export const Quiz = () => {
+interface QuizProps {
+  onBack?: () => void;
+}
+
+export const Quiz = ({ onBack }: QuizProps = {}) => {
   const [phase, setPhase] = useState<Phase>("intro");
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState<(Answer | null)[]>(() =>
@@ -88,6 +92,14 @@ export const Quiz = () => {
         animate={{ opacity: 1, y: 0 }}
         className="w-full max-w-2xl mx-auto text-center"
       >
+        {onBack && (
+          <button
+            onClick={onBack}
+            className="mb-4 inline-flex items-center gap-1 rounded-full bg-white/90 px-4 py-2 text-sm font-bold text-accent shadow-card-soft hover:scale-105 transition-transform"
+          >
+            <ArrowLeft className="h-4 w-4" /> Menu
+          </button>
+        )}
         <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/80 px-5 py-2 text-sm font-semibold text-primary shadow-card-soft">
           <Sparkles className="h-4 w-4" /> English Quiz · 4. třída
         </div>
@@ -175,6 +187,15 @@ export const Quiz = () => {
             >
               <Share2 className="mr-2 h-5 w-5" /> Share result
             </Button>
+            {onBack && (
+              <Button
+                onClick={onBack}
+                variant="outline"
+                className="h-14 px-6 text-lg font-display font-bold rounded-full border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground"
+              >
+                <Home className="mr-2 h-5 w-5" /> ← Menu
+              </Button>
+            )}
           </div>
         </div>
       </motion.div>
@@ -186,6 +207,16 @@ export const Quiz = () => {
 
   return (
     <div className="w-full max-w-2xl mx-auto">
+      {onBack && (
+        <div className="mb-4 flex justify-start">
+          <button
+            onClick={onBack}
+            className="inline-flex items-center gap-1 rounded-full bg-white/90 px-4 py-2 text-sm font-bold text-accent shadow-card-soft hover:scale-105 transition-transform"
+          >
+            <ArrowLeft className="h-4 w-4" /> Menu
+          </button>
+        </div>
+      )}
       {/* Progress */}
       <div className="mb-6">
         <div className="flex justify-between items-center mb-2 px-1">
