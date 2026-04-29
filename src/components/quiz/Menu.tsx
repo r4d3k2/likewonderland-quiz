@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 
-type Screen = "menu" | "likelikes" | "vocabulary";
+type Screen = "menu" | "likelikes" | "vocabulary" | "city" | "memory";
 
 interface MenuProps {
   onSelect: (screen: Screen) => void;
@@ -63,6 +63,48 @@ export const Menu = ({ onSelect }: MenuProps) => {
             Unscramble the words!
           </p>
           <span className="mt-4 inline-flex items-center gap-1 text-primary-foreground font-bold">
+            Start →
+          </span>
+        </motion.button>
+
+        {/* Card 3 - The City */}
+        <motion.button
+          whileHover={{ scale: 1.04, y: -4 }}
+          whileTap={{ scale: 0.97 }}
+          onClick={() => onSelect("city")}
+          className="group relative rounded-[2rem] bg-gradient-grass p-8 sm:p-10 text-left shadow-pop border-4 border-white transition-shadow hover:shadow-2xl"
+        >
+          <div className="text-7xl sm:text-8xl mb-4 inline-block group-hover:animate-wiggle">
+            🏙️
+          </div>
+          <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-grass-foreground mb-2">
+            The City
+          </h2>
+          <p className="text-lg text-grass-foreground/90 font-semibold">
+            Czech → English!
+          </p>
+          <span className="mt-4 inline-flex items-center gap-1 text-grass-foreground font-bold">
+            Start →
+          </span>
+        </motion.button>
+
+        {/* Card 4 - Memory Game */}
+        <motion.button
+          whileHover={{ scale: 1.04, y: -4 }}
+          whileTap={{ scale: 0.97 }}
+          onClick={() => onSelect("memory")}
+          className="group relative rounded-[2rem] bg-gradient-pink p-8 sm:p-10 text-left shadow-pop border-4 border-white transition-shadow hover:shadow-2xl"
+        >
+          <div className="text-7xl sm:text-8xl mb-4 inline-block group-hover:animate-wiggle">
+            🃏
+          </div>
+          <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-pink-foreground mb-2">
+            Memory Game
+          </h2>
+          <p className="text-lg text-pink-foreground/90 font-semibold">
+            Match the pairs!
+          </p>
+          <span className="mt-4 inline-flex items-center gap-1 text-pink-foreground font-bold">
             Start →
           </span>
         </motion.button>

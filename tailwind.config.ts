@@ -83,6 +83,8 @@ export default {
         "gradient-secondary": "var(--gradient-secondary)",
         "gradient-success": "var(--gradient-success)",
         "gradient-sun": "var(--gradient-sun)",
+        "gradient-grass": "var(--gradient-grass)",
+        "gradient-pink": "var(--gradient-pink)",
       },
       borderRadius: {
         lg: "var(--radius)",
