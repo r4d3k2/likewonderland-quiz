@@ -41,16 +41,20 @@ export const VocabularyQuiz = ({ onBack }: Props) => {
   const total = VOCAB_QUESTIONS.length;
   const current = VOCAB_QUESTIONS[index];
 
-  // Build initial tiles for current question
-  const initialTiles: Tile[] = useMemo(
-    () =>
-      current.scrambled.map((w, i) => ({
-        id: i,
-        word: w,
-        color: TILE_COLORS[(i + current.id) % TILE_COLORS.length],
-      })),
-    [current]
-  );
+  // Build initial tiles for current question — shuffle order, keep words intact
+  const initialTiles: Tile[] = useMemo(() => {
+    const built: Tile[] = current.tiles.map((w, i) => ({
+      id: i,
+      word: w,
+      color: TILE_COLORS[(i + current.id) % TILE_COLORS.length],
+    }));
+    // Fisher-Yates shuffle
+    for (let i = built.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [built[i], built[j]] = [built[j], built[i]];
+    }
+    return built;
+  }, [current]);
 
   const [pool, setPool] = useState<Tile[]>(initialTiles);
   const [answer, setAnswer] = useState<Tile[]>([]);
