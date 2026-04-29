@@ -187,6 +187,15 @@ export const Quiz = ({ onBack }: QuizProps = {}) => {
             >
               <Share2 className="mr-2 h-5 w-5" /> Share result
             </Button>
+            {onBack && (
+              <Button
+                onClick={onBack}
+                variant="outline"
+                className="h-14 px-6 text-lg font-display font-bold rounded-full border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground"
+              >
+                <Home className="mr-2 h-5 w-5" /> ← Menu
+              </Button>
+            )}
           </div>
         </div>
       </motion.div>
