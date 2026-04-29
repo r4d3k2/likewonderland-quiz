@@ -18,7 +18,7 @@ export const Menu = ({ onSelect }: MenuProps) => {
         <Sparkles className="h-4 w-4" /> English Quiz · 4. třída
       </div>
       <h1 className="font-display text-5xl sm:text-7xl font-extrabold leading-none mb-3">
-        English Quiz <span className="inline-block animate-wiggle">🌟</span>
+        Kiki's English Quiz <span className="inline-block animate-wiggle">🌟</span>
       </h1>
       <p className="text-xl sm:text-2xl text-muted-foreground mb-10">
         Choose your topic!
