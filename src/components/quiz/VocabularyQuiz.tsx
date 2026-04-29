@@ -56,7 +56,7 @@ export const VocabularyQuiz = ({ onBack }: Props) => {
   const [answer, setAnswer] = useState<Tile[]>([]);
 
   // Reset when question changes
-  useMemo(() => {
+  useEffect(() => {
     setPool(initialTiles);
     setAnswer([]);
     setFeedback(null);
