@@ -3,13 +3,17 @@ import { AnimatePresence, motion } from "framer-motion";
 import { QUESTIONS, type Answer } from "./questions";
 import { bigConfetti, popConfetti } from "./Confetti";
 import { Button } from "@/components/ui/button";
-import { Sparkles, Trophy, RefreshCw, Share2, Check, X } from "lucide-react";
+import { Sparkles, Trophy, RefreshCw, Share2, Check, X, ArrowLeft, Home } from "lucide-react";
 import { toast } from "sonner";
 
 type Phase = "intro" | "playing" | "done";
 type Feedback = null | "correct" | "wrong";
 
-export const Quiz = () => {
+interface QuizProps {
+  onBack?: () => void;
+}
+
+export const Quiz = ({ onBack }: QuizProps = {}) => {
   const [phase, setPhase] = useState<Phase>("intro");
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState<(Answer | null)[]>(() =>
