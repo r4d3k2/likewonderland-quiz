@@ -207,6 +207,16 @@ export const Quiz = ({ onBack }: QuizProps = {}) => {
 
   return (
     <div className="w-full max-w-2xl mx-auto">
+      {onBack && (
+        <div className="mb-4 flex justify-start">
+          <button
+            onClick={onBack}
+            className="inline-flex items-center gap-1 rounded-full bg-white/90 px-4 py-2 text-sm font-bold text-accent shadow-card-soft hover:scale-105 transition-transform"
+          >
+            <ArrowLeft className="h-4 w-4" /> Menu
+          </button>
+        </div>
+      )}
       {/* Progress */}
       <div className="mb-6">
         <div className="flex justify-between items-center mb-2 px-1">
