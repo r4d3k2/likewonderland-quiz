@@ -92,6 +92,14 @@ export const Quiz = ({ onBack }: QuizProps = {}) => {
         animate={{ opacity: 1, y: 0 }}
         className="w-full max-w-2xl mx-auto text-center"
       >
+        {onBack && (
+          <button
+            onClick={onBack}
+            className="mb-4 inline-flex items-center gap-1 rounded-full bg-white/90 px-4 py-2 text-sm font-bold text-accent shadow-card-soft hover:scale-105 transition-transform"
+          >
+            <ArrowLeft className="h-4 w-4" /> Menu
+          </button>
+        )}
         <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/80 px-5 py-2 text-sm font-semibold text-primary shadow-card-soft">
           <Sparkles className="h-4 w-4" /> English Quiz · 4. třída
         </div>
