@@ -73,6 +73,14 @@ export default {
           DEFAULT: "hsl(var(--success))",
           foreground: "hsl(var(--success-foreground))",
         },
+        fire: {
+          DEFAULT: "hsl(var(--fire))",
+          foreground: "hsl(var(--fire-foreground))",
+        },
+        teal: {
+          DEFAULT: "hsl(var(--teal))",
+          foreground: "hsl(var(--teal-foreground))",
+        },
       },
       fontFamily: {
         display: ["'Baloo 2'", "Fredoka", "system-ui", "sans-serif"],
@@ -85,6 +93,8 @@ export default {
         "gradient-sun": "var(--gradient-sun)",
         "gradient-grass": "var(--gradient-grass)",
         "gradient-pink": "var(--gradient-pink)",
+        "gradient-fire": "var(--gradient-fire)",
+        "gradient-teal": "var(--gradient-teal)",
       },
       borderRadius: {
         lg: "var(--radius)",
