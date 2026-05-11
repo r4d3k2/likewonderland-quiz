@@ -81,6 +81,10 @@ export default {
           DEFAULT: "hsl(var(--teal))",
           foreground: "hsl(var(--teal-foreground))",
         },
+        violet: {
+          DEFAULT: "hsl(var(--violet))",
+          foreground: "hsl(var(--violet-foreground))",
+        },
       },
       fontFamily: {
         display: ["'Baloo 2'", "Fredoka", "system-ui", "sans-serif"],
@@ -95,6 +99,7 @@ export default {
         "gradient-pink": "var(--gradient-pink)",
         "gradient-fire": "var(--gradient-fire)",
         "gradient-teal": "var(--gradient-teal)",
+        "gradient-violet": "var(--gradient-violet)",
       },
       borderRadius: {
         lg: "var(--radius)",
