@@ -6,9 +6,10 @@ import { CityQuiz } from "@/components/quiz/CityQuiz";
 import { MemoryGame } from "@/components/quiz/MemoryGame";
 import { DontDoesntQuiz } from "@/components/quiz/DontDoesntQuiz";
 import { SortingQuiz } from "@/components/quiz/SortingQuiz";
+import { QuestionsQuiz } from "@/components/quiz/QuestionsQuiz";
 import { FloatingDecor } from "@/components/quiz/FloatingDecor";
 
-type Screen = "menu" | "likelikes" | "vocabulary" | "city" | "memory" | "dontdoesnt" | "sorting";
+type Screen = "menu" | "likelikes" | "vocabulary" | "city" | "memory" | "dontdoesnt" | "sorting" | "questions";
 
 const Index = () => {
   const [currentScreen, setCurrentScreen] = useState<Screen>("menu");
@@ -25,6 +26,7 @@ const Index = () => {
         {currentScreen === "memory" && <MemoryGame onBack={back} />}
         {currentScreen === "dontdoesnt" && <DontDoesntQuiz onBack={back} />}
         {currentScreen === "sorting" && <SortingQuiz onBack={back} />}
+        {currentScreen === "questions" && <QuestionsQuiz onBack={back} />}
       </main>
     </>
   );

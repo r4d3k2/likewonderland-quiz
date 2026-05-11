@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 
-type Screen = "menu" | "likelikes" | "vocabulary" | "city" | "memory" | "dontdoesnt" | "sorting";
+type Screen = "menu" | "likelikes" | "vocabulary" | "city" | "memory" | "dontdoesnt" | "sorting" | "questions";
 
 interface MenuProps {
   onSelect: (screen: Screen) => void;
@@ -147,6 +147,27 @@ export const Menu = ({ onSelect }: MenuProps) => {
             Drag into the right group!
           </p>
           <span className="mt-4 inline-flex items-center gap-1 text-teal-foreground font-bold">
+            Start →
+          </span>
+        </motion.button>
+
+        {/* Card 7 - Questions */}
+        <motion.button
+          whileHover={{ scale: 1.04, y: -4 }}
+          whileTap={{ scale: 0.97 }}
+          onClick={() => onSelect("questions")}
+          className="group relative rounded-[2rem] bg-gradient-violet p-8 sm:p-10 text-left shadow-pop border-4 border-white transition-shadow hover:shadow-2xl"
+        >
+          <div className="text-7xl sm:text-8xl mb-4 inline-block group-hover:animate-wiggle">
+            ❓
+          </div>
+          <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-violet-foreground mb-2">
+            Questions!
+          </h2>
+          <p className="text-lg text-violet-foreground/90 font-semibold">
+            Build questions from word tiles!
+          </p>
+          <span className="mt-4 inline-flex items-center gap-1 text-violet-foreground font-bold">
             Start →
           </span>
         </motion.button>
