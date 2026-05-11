@@ -26,6 +26,7 @@ const Index = () => {
         {currentScreen === "memory" && <MemoryGame onBack={back} />}
         {currentScreen === "dontdoesnt" && <DontDoesntQuiz onBack={back} />}
         {currentScreen === "sorting" && <SortingQuiz onBack={back} />}
+        {currentScreen === "questions" && <QuestionsQuiz onBack={back} />}
       </main>
     </>
   );
